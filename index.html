@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Konstantin Roussev: UIUC Computer Science student. Projects, experience, and contact.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<title>Konstantin Roussev — Portfolio</title>
+<style>
+  :root { --bg:#0f1115; --card:#181b22; --text:#e8eaf0; --muted:#9aa3b2; --accent:#6ee7b7; }
+  body.light { --bg:#f6f7f9; --card:#ffffff; --text:#14161b; --muted:#5b6474; --accent:#047857; }
+  #theme { background:none; border:1px solid var(--muted); color:var(--muted); border-radius:6px; padding:.1rem .5rem; cursor:pointer; font:inherit; }
+  * { box-sizing:border-box; margin:0; }
+  html { scroll-behavior:smooth; scroll-padding-top:3.5rem; }
+  a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+  body { font-family:system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  nav { position:sticky; top:0; background:rgba(15,17,21,.9); backdrop-filter:blur(6px); display:flex; gap:1.2rem; justify-content:center; padding:.8rem; flex-wrap:wrap; z-index:1; }
+  nav a { color:var(--muted); text-decoration:none; font-size:.95rem; }
+  nav a:hover { color:var(--accent); }
+  section { max-width:860px; margin:0 auto; padding:4rem 1.25rem; }
+  h1 { font-size:clamp(2rem, 6vw, 3.4rem); line-height:1.1; }
+  h2 { font-size:1.6rem; margin-bottom:1.2rem; color:var(--accent); }
+  .role { color:var(--muted); font-size:1.2rem; margin:.6rem 0 1.5rem; }
+  .btn { display:inline-block; padding:.6rem 1.1rem; border:1px solid var(--accent); border-radius:8px; color:var(--accent); text-decoration:none; margin-right:.5rem; margin-top:.4rem; }
+  .btn:hover { background:var(--accent); color:var(--bg); }
+  p + p { margin-top:1rem; }
+  .skills { display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; }
+  .skills li { background:var(--card); padding:.35rem .8rem; border-radius:999px; font-size:.9rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:1rem; }
+  .card { background:var(--card); border-radius:12px; padding:1.3rem; display:flex; flex-direction:column; gap:.6rem; }
+  .card h3 { font-size:1.15rem; }
+  .meta, .tech { color:var(--muted); font-size:.85rem; }
+  .card a { color:var(--accent); margin-top:auto; }
+  .list { display:flex; flex-direction:column; gap:1rem; }
+  ul.b { padding-left:1.2rem; margin-top:.3rem; }
+  footer { text-align:center; color:var(--muted); padding:2rem; font-size:.85rem; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#awards">Awards</a><a href="#contact">Contact</a>
+  <button id="theme" aria-label="Toggle light and dark theme">◐</button>
+</nav>
+<script>
+  if (localStorage.theme === 'light') document.body.classList.add('light');
+  document.getElementById('theme').onclick = () => {
+    localStorage.theme = document.body.classList.toggle('light') ? 'light' : 'dark';
+  };
+</script>
+
+<section id="intro">
+  <h1>Hi, I'm Konstantin Roussev.</h1>
+  <p class="role">Computer Science student at UIUC (Grainger) · Systems, IT &amp; software</p>
+  <a class="btn" href="#projects">See my projects</a>
+  <a class="btn" href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub</a>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm a first-year Computer Science student at the University of Illinois Urbana-Champaign, currently taking CS 124 Honors. I got into computing by fixing them: I've been repairing computers since 2021 and spent two years keeping 400+ Chromebooks running for my school district.</p>
+  <p>That hands-on side still drives what I build. I run a homelab of three repurposed servers, and my software projects lean toward systems that have to stay reliable: durable task queues, ledgers, recovery after crashes. I use AI coding tools heavily, and my focus is on writing clear specs and test criteria and then verifying the result through code review and testing.</p>
+  <p>I'm looking for internships where I can work on real systems, learn from experienced engineers, and keep building.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <ul class="skills">
+    <li>Java</li><li>Python</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>SQLite</li><li>C++ (learning)</li><li>Git</li>
+    <li>Linux (Debian, Ubuntu)</li><li>Docker</li><li>Networking &amp; DNS</li><li>Hardware diagnostics</li>
+    <li>CompTIA A+</li><li>CompTIA ITF+</li>
+  </ul>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Troubleshooter</h3>
+      <p>A guided troubleshooting app: pick a device and a symptom, answer a few questions, and see the likely causes ranked. It always asks the most useful next question, then walks you through the fix.</p>
+      <p class="tech">TypeScript · React · CS 124 Honors project</p>
+      <a href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+    <div class="card">
+      <h3>Multi-Agent Task Coordination System</h3>
+      <p>A persistent AI task-orchestration system with durable task runs, dependency-aware dispatch, retries, timeouts, cancellation, and recovery after restarts. Validated through tests and failure analysis.</p>
+      <p class="tech">React · TypeScript · Node.js · SQLite</p>
+      <a href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+    <div class="card">
+      <h3>CS2 Market Analytics &amp; Paper Trading</h3>
+      <p>A Counter-Strike 2 market-analysis platform covering market data, inventory, replay, paper trading, and backtesting. I defined the requirements, test criteria, and ledger/recovery spec, then verified the build.</p>
+      <p class="tech">Node.js · SQLite</p>
+      <a href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub →</a>
+    </div>
+    <div class="card">
+      <h3>Personal Homelab</h3>
+      <p>Three repurposed servers I built and run: a NAS/file server, a network-wide DNS ad blocker, and a monitoring/management server, with Docker services and remote access.</p>
+      <p class="tech">Debian · Ubuntu · OpenMediaVault · Docker · Samba · DNS</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="list">
+    <div class="card">
+      <h3>Technology Services Intern — Elmhurst CUSD 205</h3>
+      <p class="meta">Aug 2022 – May 2024 · Elmhurst, IL</p>
+      <ul class="b"><li>Diagnosed and repaired 400+ Chromebooks and returned them to service across the district.</li><li>Supported device deployment, repair triage, and logistics.</li></ul>
+    </div>
+    <div class="card">
+      <h3>Technician — Independent Computer Repair</h3>
+      <p class="meta">Apr 2021 – Present · Elmhurst, IL</p>
+      <ul class="b"><li>Diagnose, repair, and upgrade 50+ computers and devices with systematic hardware/software troubleshooting.</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="awards">
+  <h2>Awards &amp; Leadership</h2>
+  <div class="list">
+    <div class="card">
+      <h3>SkillsUSA — Information Technology Services</h3>
+      <p>Illinois state champion (2025) and runner-up (2026); qualified for the National Leadership &amp; Skills Conference both years.</p>
+    </div>
+    <div class="card">
+      <h3>President, Computer Club — York Community High School</h3>
+      <p>Grew membership to 15 students and organized PC-building, repair activities, tech events, and competitions (2022–2026).</p>
+    </div>
+    <div class="card">
+      <h3>Harvard University — Quantum Mechanics for Computing</h3>
+      <p>Summer course, Jul – Aug 2025.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Open to internships, collaborations, and questions about any of my projects.</p>
+  <a class="btn" href="mailto:roussevkonstantin@outlook.com">Email me</a>
+  <a class="btn" href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub</a>
+</section>
+
+<footer>© 2026 Konstantin Roussev</footer>
+</body>
+</html>

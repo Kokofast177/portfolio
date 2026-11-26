@@ -46,7 +46,6 @@
   #contact { text-align:center; }
   #contact p { color:var(--muted); font-size:1.2rem; margin-bottom:1.5rem; }
   footer { text-align:center; color:var(--muted); padding:2.5rem; font-size:.8rem; border-top:1px solid var(--line); }
-  .badge { display:inline-flex; align-items:center; gap:.45rem; padding:.45rem 1rem; border-radius:980px; background:var(--card); border:1px solid var(--line); font-size:.9rem; margin-bottom:1.6rem; box-shadow:0 2px 12px rgba(0,0,0,.05); }
   .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:1rem; max-width:860px; margin:4.5rem auto 0; }
   .stat b { display:block; font-size:clamp(2rem, 5vw, 2.8rem); letter-spacing:-.03em; line-height:1.1; }
   .stat span { color:var(--muted); font-size:.92rem; }
@@ -78,7 +77,6 @@
 </script>
 
 <section id="intro">
-  <div class="badge">🏆 Illinois SkillsUSA IT Services State Champion</div>
   <h1>Konstantin Roussev.<br><span>Builds systems that stay up.</span></h1>
   <p class="role">Computer Science student at UIUC (Grainger) · Systems, IT &amp; software</p>
   <a class="btn" href="#projects">See my projects</a>
@@ -118,15 +116,13 @@
   <div class="grid">
     <div class="card">
       <h3>K&amp;R Games</h3>
-      <p>A two-person game studio I co-founded with a friend in high school (I'm the K). Every game was written entirely by hand, no AI, while we were still learning to code.</p>
-      <p>We made small games and tools, including a 2,000-line text adventure.</p>
+      <p>A friend and I started this in high school (I'm the K). We made small games and tools, including a 2,000-line text adventure, and wrote all of it by hand while we were learning to code.</p>
       <p class="tech">Python · browser games · itch.io</p>
       <a href="https://kr-games.itch.io/" target="_blank" rel="noopener">Play on itch.io →</a>
     </div>
     <div class="card">
       <h3>Personal Homelab</h3>
-      <p>I took three old computers that were headed for the trash and turned them into servers I run myself. One is a file server for the whole house, one blocks ads for every device on our network, and one keeps an eye on the other two.</p>
-      <p>Things break, and I'm the one who fixes them, which has taught me more about Linux, Docker, and networking than any class so far.</p>
+      <p>Three old computers I set up as servers on Debian and Ubuntu. One is a file server, one is a DNS ad blocker for the whole network, and one is for monitoring the other two. I run a few services on them in Docker and fix them when they break.</p>
       <p class="tech">Debian · Ubuntu · OpenMediaVault · Docker · Samba · DNS</p>
     </div>
   </div>
@@ -135,21 +131,21 @@
   <div class="grid">
     <div class="card">
       <h3>Troubleshooter</h3>
-      <p>I've fixed a lot of broken devices, and most repairs start the same way: asking the right questions in the right order. So I built an app that does that. You pick your device and what's wrong, it asks one question at a time, and the list of likely causes reshuffles after every answer until it can walk you through a fix.</p>
-      <p>The part I'm proudest of is that it learns from people. Every fix shows how often it actually worked ("Worked for 9 of 12 people"), and once a fix has enough votes, the good ones float to the top. I also made sure it works for everyone: there's a color-blind mode, animation can be turned off, and there's even a version that runs without JavaScript.</p>
+      <p>My CS 124 Honors project. You pick a device and what's wrong with it, answer a few questions, and it guesses the most likely causes and shows you how to fix it. Device names come from iFixit, and the repair steps link back to where they came from.</p>
+      <p>People can vote on whether a fix worked for them, and fixes with better results move up the list. It also has accounts, a color-blind mode, and a version that works without JavaScript.</p>
       <p class="tech">React · TypeScript · Vite · Firebase · MapLibre</p>
       <a href="https://troubleshooterdemo.web.app" target="_blank" rel="noopener">Try it live →</a>
     </div>
     <div class="card">
       <h3>Multi-Agent Task Coordination System <span class="wip">In progress</span></h3>
-      <p>When you run several AI coding agents at once, things go wrong in boring ways: a task runs twice, a crash wipes out an hour of work, or one agent starts before the thing it needs is done. I designed a system that keeps them in line.</p>
-      <p>Tasks wait for their dependencies, retry when they fail, time out when they hang, and pick up where they left off after a restart. Most of my work was deciding exactly what should happen in each failure case and then testing that it really did.</p>
+      <p>A tool for running several AI coding agents at once without them stepping on each other. Tasks can depend on other tasks, and if something crashes or times out, it retries or picks back up after a restart instead of starting over.</p>
+      <p>I spent most of my time on the failure cases: what should happen when a provider goes down halfway through a task, and how to make sure a task never runs twice.</p>
       <p class="tech">React · TypeScript · Node.js · SQLite</p>
     </div>
     <div class="card">
       <h3>CS2 Market Analytics &amp; Paper Trading <span class="wip">In progress</span></h3>
-      <p>Counter-Strike 2 skins have a real market with real prices, which makes it a fun place to learn how trading systems work without risking real money.</p>
-      <p>This platform tracks market data and my inventory, can replay past market days, and lets me test strategies with fake money first. I wrote the requirements and test criteria, including a ledger that can't lose track of money if the program crashes, then reviewed and debugged the code to make sure it actually met them.</p>
+      <p>A tool for tracking Counter-Strike 2 skin prices. It pulls market data, keeps track of an inventory, and lets me test trading ideas with fake money on past data.</p>
+      <p>I wrote the requirements and tests, including how the ledger should recover if the program crashes mid-trade, then reviewed and debugged the code until it passed them.</p>
       <p class="tech">Node.js · SQLite</p>
     </div>
   </div>

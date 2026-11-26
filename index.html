@@ -56,6 +56,9 @@
   .cert { display:flex; align-items:center; gap:1rem; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:1.1rem 1.3rem; }
   .cert .seal { flex:none; width:52px; height:52px; border-radius:50%; display:grid; place-items:center; font-weight:700; color:#fff; background:linear-gradient(135deg, #c8102e, #7a0019); font-size:.95rem; }
   .cert small { display:block; color:var(--muted); }
+  .group { font-size:1.35rem; letter-spacing:-.02em; margin-top:2.5rem; }
+  .group:first-of-type { margin-top:0; }
+  .group-note { color:var(--muted); margin:.3rem 0 1.2rem; max-width:680px; }
   .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
   .reveal.in { opacity:1; transform:none; }
   @media (max-width:600px) { nav { gap:.9rem; } nav a { font-size:.75rem; } section { padding:4rem 1.25rem; } #intro { padding:6rem 1.25rem 5rem; } }
@@ -110,6 +113,25 @@
 
 <section id="projects">
   <h2>Projects</h2>
+  <h3 class="group">Written by hand</h3>
+  <p class="group-note">Code and setup I wrote myself, line by line.</p>
+  <div class="grid">
+    <div class="card">
+      <h3>K&amp;R Games</h3>
+      <p>A two-person game studio I co-founded with a friend in high school (I'm the K). Every game was written entirely by hand, no AI, while we were still learning to code.</p>
+      <p>Highlights: <b>A Chicago Dog</b>, where you catch the right hot dog toppings as they fly across the screen (playable in your browser), plus China Trail, a terminal Roulette game, a password generator, and a tool that tests Python's random number generator for bias.</p>
+      <p class="tech">Python · browser games · itch.io</p>
+      <a href="https://kr-games.itch.io/" target="_blank" rel="noopener">Play on itch.io →</a>
+    </div>
+    <div class="card">
+      <h3>Personal Homelab</h3>
+      <p>I took three old computers that were headed for the trash and turned them into servers I run myself. One is a file server for the whole house, one blocks ads for every device on our network, and one keeps an eye on the other two.</p>
+      <p>Things break, and I'm the one who fixes them, which has taught me more about Linux, Docker, and networking than any class so far.</p>
+      <p class="tech">Debian · Ubuntu · OpenMediaVault · Docker · Samba · DNS</p>
+    </div>
+  </div>
+  <h3 class="group">Built with AI agents</h3>
+  <p class="group-note">I write the spec and test criteria, an AI agent (Codex or Claude Code) writes most of the code, and I review, test, and debug it until it meets the spec.</p>
   <div class="grid">
     <div class="card">
       <h3>Troubleshooter</h3>
@@ -122,26 +144,13 @@
       <h3>Multi-Agent Task Coordination System <span class="wip">In progress</span></h3>
       <p>When you run several AI coding agents at once, things go wrong in boring ways: a task runs twice, a crash wipes out an hour of work, or one agent starts before the thing it needs is done. I designed a system that keeps them in line.</p>
       <p>Tasks wait for their dependencies, retry when they fail, time out when they hang, and pick up where they left off after a restart. Most of my work was deciding exactly what should happen in each failure case and then testing that it really did.</p>
-      <p class="tech">React · TypeScript · Node.js · SQLite · built with Codex &amp; Claude Code</p>
+      <p class="tech">React · TypeScript · Node.js · SQLite</p>
     </div>
     <div class="card">
       <h3>CS2 Market Analytics &amp; Paper Trading <span class="wip">In progress</span></h3>
       <p>Counter-Strike 2 skins have a real market with real prices, which makes it a fun place to learn how trading systems work without risking real money.</p>
       <p>This platform tracks market data and my inventory, can replay past market days, and lets me test strategies with fake money first. I wrote the requirements and test criteria, including a ledger that can't lose track of money if the program crashes, then reviewed and debugged the code to make sure it actually met them.</p>
-      <p class="tech">Node.js · SQLite · built with Codex &amp; Claude Code</p>
-    </div>
-    <div class="card">
-      <h3>Personal Homelab</h3>
-      <p>I took three old computers that were headed for the trash and turned them into servers I run myself. One is a file server for the whole house, one blocks ads for every device on our network, and one keeps an eye on the other two.</p>
-      <p>Things break, and I'm the one who fixes them, which has taught me more about Linux, Docker, and networking than any class so far.</p>
-      <p class="tech">Debian · Ubuntu · OpenMediaVault · Docker · Samba · DNS</p>
-    </div>
-    <div class="card">
-      <h3>K&amp;R Games</h3>
-      <p>A two-person game studio I co-founded (I'm the K) to make games for the fun of it. We've shipped five small titles on itch.io, from a browser arcade game to Python terminal tools.</p>
-      <p>Highlights: <b>A Chicago Dog</b>, where you catch the right hot dog toppings as they fly across the screen (playable in your browser), plus China Trail, a terminal Roulette game, a password generator, and a tool that tests Python's random number generator for bias.</p>
-      <p class="tech">Python · browser games · itch.io</p>
-      <a href="https://kr-games.itch.io/" target="_blank" rel="noopener">Play on itch.io →</a>
+      <p class="tech">Node.js · SQLite</p>
     </div>
   </div>
 </section>

@@ -46,6 +46,16 @@
   #contact { text-align:center; }
   #contact p { color:var(--muted); font-size:1.2rem; margin-bottom:1.5rem; }
   footer { text-align:center; color:var(--muted); padding:2.5rem; font-size:.8rem; border-top:1px solid var(--line); }
+  .badge { display:inline-flex; align-items:center; gap:.45rem; padding:.45rem 1rem; border-radius:980px; background:var(--card); border:1px solid var(--line); font-size:.9rem; margin-bottom:1.6rem; box-shadow:0 2px 12px rgba(0,0,0,.05); }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:1rem; max-width:860px; margin:4.5rem auto 0; }
+  .stat b { display:block; font-size:clamp(2rem, 5vw, 2.8rem); letter-spacing:-.03em; line-height:1.1; }
+  .stat span { color:var(--muted); font-size:.92rem; }
+  .wip { display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:#b25000; background:rgba(255,149,0,.14); padding:.15rem .55rem; border-radius:980px; vertical-align:middle; margin-left:.4rem; }
+  body.dark .wip { color:#ffb340; }
+  .certs { display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:1rem; margin-top:1.5rem; }
+  .cert { display:flex; align-items:center; gap:1rem; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:1.1rem 1.3rem; }
+  .cert .seal { flex:none; width:52px; height:52px; border-radius:50%; display:grid; place-items:center; font-weight:700; color:#fff; background:linear-gradient(135deg, #c8102e, #7a0019); font-size:.95rem; }
+  .cert small { display:block; color:var(--muted); }
   .reveal { opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
   .reveal.in { opacity:1; transform:none; }
   @media (max-width:600px) { nav { gap:.9rem; } nav a { font-size:.75rem; } section { padding:4rem 1.25rem; } #intro { padding:6rem 1.25rem 5rem; } }
@@ -65,10 +75,18 @@
 </script>
 
 <section id="intro">
+  <div class="badge">🏆 Illinois SkillsUSA IT Services State Champion</div>
   <h1>Konstantin Roussev.<br><span>Builds systems that stay up.</span></h1>
   <p class="role">Computer Science student at UIUC (Grainger) · Systems, IT &amp; software</p>
   <a class="btn" href="#projects">See my projects</a>
+  <a class="btn ghost" href="resume.pdf" target="_blank" rel="noopener">Resume (PDF) ›</a>
   <a class="btn ghost" href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub ›</a>
+  <div class="stats">
+    <div class="stat"><b>400+</b><span>Chromebooks repaired for my school district</span></div>
+    <div class="stat"><b>50+</b><span>computers and devices fixed for clients</span></div>
+    <div class="stat"><b>3</b><span>servers I run in my homelab</span></div>
+    <div class="stat"><b>5+</b><span>years of hands-on repair work</span></div>
+  </div>
 </section>
 
 <section id="about">
@@ -83,8 +101,11 @@
   <ul class="skills">
     <li>Java</li><li>Python</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>SQLite</li><li>C++ (learning)</li><li>Git</li>
     <li>Linux (Debian, Ubuntu)</li><li>Docker</li><li>Networking &amp; DNS</li><li>Hardware diagnostics</li>
-    <li>CompTIA A+</li><li>CompTIA ITF+</li>
-  </ul>
+    </ul>
+  <div class="certs">
+    <div class="cert"><div class="seal">A+</div><div><b>CompTIA A+</b><small>Hardware, operating systems, networking, and troubleshooting</small></div></div>
+    <div class="cert"><div class="seal">ITF+</div><div><b>CompTIA ITF+</b><small>IT fundamentals</small></div></div>
+  </div>
 </section>
 
 <section id="projects">
@@ -98,13 +119,13 @@
       <a href="https://troubleshooterdemo.web.app" target="_blank" rel="noopener">Try it live →</a>
     </div>
     <div class="card">
-      <h3>Multi-Agent Task Coordination System</h3>
+      <h3>Multi-Agent Task Coordination System <span class="wip">In progress</span></h3>
       <p>When you run several AI coding agents at once, things go wrong in boring ways: a task runs twice, a crash wipes out an hour of work, or one agent starts before the thing it needs is done. I designed a system that keeps them in line.</p>
       <p>Tasks wait for their dependencies, retry when they fail, time out when they hang, and pick up where they left off after a restart. Most of my work was deciding exactly what should happen in each failure case and then testing that it really did.</p>
       <p class="tech">React · TypeScript · Node.js · SQLite · built with Codex &amp; Claude Code</p>
     </div>
     <div class="card">
-      <h3>CS2 Market Analytics &amp; Paper Trading</h3>
+      <h3>CS2 Market Analytics &amp; Paper Trading <span class="wip">In progress</span></h3>
       <p>Counter-Strike 2 skins have a real market with real prices, which makes it a fun place to learn how trading systems work without risking real money.</p>
       <p>This platform tracks market data and my inventory, can replay past market days, and lets me test strategies with fake money first. I wrote the requirements and test criteria, including a ledger that can't lose track of money if the program crashes, then reviewed and debugged the code to make sure it actually met them.</p>
       <p class="tech">Node.js · SQLite · built with Codex &amp; Claude Code</p>

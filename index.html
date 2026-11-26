@@ -42,6 +42,7 @@
   .card a:hover { text-decoration:underline; }
   .list { display:flex; flex-direction:column; gap:1.25rem; }
   ul.b { padding-left:1.2rem; }
+  .card ul.b { font-size:.92rem; color:var(--muted); display:flex; flex-direction:column; gap:.3rem; }
   #contact { text-align:center; }
   #contact p { color:var(--muted); font-size:1.2rem; margin-bottom:1.5rem; }
   footer { text-align:center; color:var(--muted); padding:2.5rem; font-size:.8rem; border-top:1px solid var(--line); }
@@ -91,25 +92,44 @@
   <div class="grid">
     <div class="card">
       <h3>Troubleshooter</h3>
-      <p>A guided troubleshooting app: pick a device and a symptom, answer a few questions, and see the likely causes ranked. It always asks the most useful next question, then walks you through the fix.</p>
-      <p class="tech">TypeScript · React · Firebase · CS 124 Honors project</p>
+      <p>Tell it what's broken (an iPhone, a PS5, a printer) and it narrows down why, one question at a time. After every answer the likely causes re-rank, then it walks you through the fix, with each step linked to its source.</p>
+      <ul class="b">
+        <li>Thousands of devices pulled from iFixit, with official repair guides from Apple and Kodak</li>
+        <li>Fixes reorder themselves by real results ("Worked for 9 of 12 people") once they have 10 votes</li>
+        <li>Accounts sync your settings; Firestore rules let each vote count only once per person</li>
+        <li>Works without JavaScript, with animation off, and in a color-blind mode</li>
+      </ul>
+      <p class="tech">React · TypeScript · Vite · Firebase Auth &amp; Firestore · MapLibre</p>
       <a href="https://troubleshooterdemo.web.app" target="_blank" rel="noopener">Try it live →</a>
     </div>
     <div class="card">
       <h3>Multi-Agent Task Coordination System</h3>
-      <p>A persistent AI task-orchestration system with durable task runs, dependency-aware dispatch, retries, timeouts, cancellation, and recovery after restarts. Validated through tests and failure analysis.</p>
-      <p class="tech">React · TypeScript · Node.js · SQLite</p>
-      <a href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub →</a>
+      <p>A job runner for AI coding agents that doesn't lose work. Tasks wait for the tasks they depend on, survive a crash or restart, and never run twice.</p>
+      <ul class="b">
+        <li>Durable task runs with retries, timeouts, and cancellation</li>
+        <li>Dependency-aware dispatch that passes each task only the context it needs</li>
+        <li>Defined what "done" means when an AI provider fails mid-task, then tested those failure cases</li>
+      </ul>
+      <p class="tech">React · TypeScript · Node.js · SQLite · built with Codex &amp; Claude Code</p>
     </div>
     <div class="card">
       <h3>CS2 Market Analytics &amp; Paper Trading</h3>
-      <p>A Counter-Strike 2 market-analysis platform covering market data, inventory, replay, paper trading, and backtesting. I defined the requirements, test criteria, and ledger/recovery spec, then verified the build.</p>
-      <p class="tech">Node.js · SQLite</p>
-      <a href="https://github.com/Kokofast177" target="_blank" rel="noopener">GitHub →</a>
+      <p>A platform for studying the Counter-Strike 2 skin market: track prices and inventory, replay past market days, and test trading strategies with fake money before risking real money.</p>
+      <ul class="b">
+        <li>Market data, inventory tracking, replay, paper trading, and backtesting</li>
+        <li>Wrote the requirements and test criteria, including a ledger that can recover after a crash</li>
+        <li>Verified the AI-written code through review, testing, and debugging</li>
+      </ul>
+      <p class="tech">Node.js · SQLite · built with Codex &amp; Claude Code</p>
     </div>
     <div class="card">
       <h3>Personal Homelab</h3>
-      <p>Three repurposed servers I built and run: a NAS/file server, a network-wide DNS ad blocker, and a monitoring/management server, with Docker services and remote access.</p>
+      <p>Three old computers turned into servers I run myself, the same way an IT team runs a small office.</p>
+      <ul class="b">
+        <li>NAS / file server shared across the house with Samba</li>
+        <li>Network-wide DNS ad blocker covering every device</li>
+        <li>Monitoring and management server running Docker services with remote access</li>
+      </ul>
       <p class="tech">Debian · Ubuntu · OpenMediaVault · Docker · Samba · DNS</p>
     </div>
   </div>

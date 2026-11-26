@@ -92,44 +92,27 @@
   <div class="grid">
     <div class="card">
       <h3>Troubleshooter</h3>
-      <p>Tell it what's broken (an iPhone, a PS5, a printer) and it narrows down why, one question at a time. After every answer the likely causes re-rank, then it walks you through the fix, with each step linked to its source.</p>
-      <ul class="b">
-        <li>Device list imported from iFixit, with official repair guides from Apple and Kodak</li>
-        <li>Fixes reorder themselves by real results ("Worked for 9 of 12 people") once they have 10 votes</li>
-        <li>Accounts sync your settings; Firestore rules let each vote count only once per person</li>
-        <li>Works without JavaScript, with animation off, and in a color-blind mode</li>
-      </ul>
-      <p class="tech">React · TypeScript · Vite · Firebase Auth &amp; Firestore · MapLibre</p>
+      <p>I've fixed a lot of broken devices, and most repairs start the same way: asking the right questions in the right order. So I built an app that does that. You pick your device and what's wrong, it asks one question at a time, and the list of likely causes reshuffles after every answer until it can walk you through a fix.</p>
+      <p>The part I'm proudest of is that it learns from people. Every fix shows how often it actually worked ("Worked for 9 of 12 people"), and once a fix has enough votes, the good ones float to the top. I also made sure it works for everyone: there's a color-blind mode, animation can be turned off, and there's even a version that runs without JavaScript.</p>
+      <p class="tech">React · TypeScript · Vite · Firebase · MapLibre</p>
       <a href="https://troubleshooterdemo.web.app" target="_blank" rel="noopener">Try it live →</a>
     </div>
     <div class="card">
       <h3>Multi-Agent Task Coordination System</h3>
-      <p>A job runner for AI coding agents that doesn't lose work. Tasks wait for the tasks they depend on, survive a crash or restart, and never run twice.</p>
-      <ul class="b">
-        <li>Durable task runs with retries, timeouts, and cancellation</li>
-        <li>Dependency-aware dispatch that passes each task only the context it needs</li>
-        <li>Defined what "done" means when an AI provider fails mid-task, then tested those failure cases</li>
-      </ul>
+      <p>When you run several AI coding agents at once, things go wrong in boring ways: a task runs twice, a crash wipes out an hour of work, or one agent starts before the thing it needs is done. I designed a system that keeps them in line.</p>
+      <p>Tasks wait for their dependencies, retry when they fail, time out when they hang, and pick up where they left off after a restart. Most of my work was deciding exactly what should happen in each failure case and then testing that it really did.</p>
       <p class="tech">React · TypeScript · Node.js · SQLite · built with Codex &amp; Claude Code</p>
     </div>
     <div class="card">
       <h3>CS2 Market Analytics &amp; Paper Trading</h3>
-      <p>A platform for studying the Counter-Strike 2 skin market: track prices and inventory, replay past market days, and test trading strategies with fake money before risking real money.</p>
-      <ul class="b">
-        <li>Market data, inventory tracking, replay, paper trading, and backtesting</li>
-        <li>Wrote the requirements and test criteria, including a ledger that can recover after a crash</li>
-        <li>Verified the AI-written code through review, testing, and debugging</li>
-      </ul>
+      <p>Counter-Strike 2 skins have a real market with real prices, which makes it a fun place to learn how trading systems work without risking real money.</p>
+      <p>This platform tracks market data and my inventory, can replay past market days, and lets me test strategies with fake money first. I wrote the requirements and test criteria, including a ledger that can't lose track of money if the program crashes, then reviewed and debugged the code to make sure it actually met them.</p>
       <p class="tech">Node.js · SQLite · built with Codex &amp; Claude Code</p>
     </div>
     <div class="card">
       <h3>Personal Homelab</h3>
-      <p>Three old computers turned into servers I run myself, the same way an IT team runs a small office.</p>
-      <ul class="b">
-        <li>NAS / file server shared across the house with Samba</li>
-        <li>Network-wide DNS ad blocker covering every device</li>
-        <li>Monitoring and management server running Docker services with remote access</li>
-      </ul>
+      <p>I took three old computers that were headed for the trash and turned them into servers I run myself. One is a file server for the whole house, one blocks ads for every device on our network, and one keeps an eye on the other two.</p>
+      <p>Things break, and I'm the one who fixes them, which has taught me more about Linux, Docker, and networking than any class so far.</p>
       <p class="tech">Debian · Ubuntu · OpenMediaVault · Docker · Samba · DNS</p>
     </div>
   </div>
